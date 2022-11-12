@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="/libs/glide/glide.core.min.css">
+    <link rel="stylesheet" href="/libs/glide/glide.theme.min.css">
+    <title>ACGNTalk</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">ACGN</div>
+        <nav>
+            <a href="index.html">首页</a>
+            <a href="https://www.bilibili.com/anime" target="_blank">动画</a>
+            <a href="#">游戏</a>
+            <a href="#">漫画</a>
+            <a href="#">轻小说</a>
+            <a href="#">个人</a>
+
+            <i class="fas fa-search"></i>
+        </nav>
+
+
+    </header>
+    <!-- 轮播图 -->
+    <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+            <div class="glide__slides">
+                <div class="glide__slide">
+                    <div class="slide-caption">
+                        <h1>孤独摇滚</h1>
+                        <h3>结束乐队！</h3>
+                        <button class="explore-btn">探索更多</button>
+                    </div>
+
+                    <div class="backdrop"></div>
+                    <img src="/images/bochiRock.png" alt="">
+                </div>
+
+                <div class="glide__slide">
+                    <div class="slide-caption">
+                        <h1>战神5</h1>
+                        <h3>诸神黄昏</h3>
+                        <button class="explore-btn">探索更多</button>
+                    </div>
+
+                    <div class="backdrop"></div>
+                    <img src="/images/GodofWar.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- 这一部分与glide__track同级，作为左右移动的标签 -->
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="&lt;">
+                &lt;
+            </button>
+
+            <button class="glide__arrow glide__arrow--right" data-glide-dir="&gt;">
+                &gt;
+            </button>
+            <div class="glide__bullets" data-glide-el="controls[nav]">
+                <button class="glide__bullet" data-glide-dir="=0"></button>
+                <button class="glide__bullet" data-glide-dir="=1"></button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- 引入的js库 -->
+    <script src="/libs/anime/anime.min.js"></script>
+    <script src="/libs/glide/glide.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

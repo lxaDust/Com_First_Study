@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+}
+
+:root {
+    --primary-color: #ff434f;
+    --secondary-color: #e3e3e3;
+    --text-color-lightest: #e7e9ec;
+    --text-color-darker: #2e2e2e;
+    --text-color-gray: #8b8b8b;
+    --text-color-dark-gray: #727272;
+    --text-color-light-gray: #c6c6c6;
+    --backdrop-color: rgba(42, 42, 42, 0.69);
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    display: grid;
+    padding: 0 40px;
+    /* 让两个元素以列的形式排列，第一个元素占有1/3的宽度，第二个占有2/3的宽度 */
+    grid-template-columns: 1fr 2fr;
+
+    align-items: center;
+    position: relative;
+
+    /* 应该是让字的层级高一些 */
+    z-index: 200;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+
+    color: var(--text-color-lightest);
+}
+
+header nav {
+    justify-self: end;
+}
+
+header nav a {
+    color: var(--text-color-lightest);
+
+    text-decoration: none;
+
+    /* 盒子与盒子之间的距离为24px */
+    margin: 0 24px;
+}
+
+header nav i {
+    color: var(--text-color-lightest);
+}
+
+.glide {
+    position: relative;
+    top: -80px;
+    /* 不要遮挡住字 */
+    z-index: 50;
+}
+
+/* 轮播中的图片和视频 */
+.glide__slide img,
+.glide__slide video {
+    width: 100vw;
+    height: 100vh;
+
+    object-fit: cover;
+}
+
+/* 图片上的文字信息，就是那些h1和h3标题的,还有一个按钮 */
+.slide-caption {
+    /* 不要再让文字把图片挤下去 */
+    position: absolute;
+    /* 优先级也需要高于图片 */
+    z-index: 70;
+
+    color: var(--text-color-lightest);
+    text-align: center;
+    max-width: 60vw;
+}
+
+/* 让轮播组件居中，由于图片本身就是铺满屏幕的，所以图片没什么变化，
+只是将文字居中了 */
+.glide__slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-caption h1 {
+    font-size: 54px;
+    font-weight: 600;
+}
+
+.slide-caption h3 {
+    font-size: 24px;
+    margin: 48px 0;
+}
+
+/* 文字和按钮的不透明度调为0（不可见），之后将以动画的形式出现 */
+.slide-caption>* {
+    opacity: 0;
+}
+
+/* 在图片上方的蒙版，让图片看起来偏暗 */
+.backdrop {
+    background: var(--backdrop-color);
+    /* 高于图片但是不高于文字 */
+    z-index: 60;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    opacity: 0.6;
+}
+
+.explore-btn {
+    outline: none;
+
+    border-radius: 4px;
+    /* 左右32px，上下14px */
+    padding: 14px 32px;
+    font-size: 18px;
+    border: 0;
+    background-color: var(--primary-color);
+    color: var(--text-color-lightest);
+    cursor: pointer;
+}
