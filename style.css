@@ -136,3 +136,85 @@ header nav i {
     color: var(--text-color-lightest);
     cursor: pointer;
 }
+
+
+/* 内容区域 */
+/* 通用样式 */
+
+/* 先给content-wrapper设定样式 */
+
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    display: grid;
+    /* 对下面的所有列起作用 */
+    justify-items: center;
+    max-width: 1180px;
+    /* 给两边分别加上80px的空间，其实去掉也没啥大影响 */
+    padding: 0 80px;
+}
+
+.title1 {
+    font-size: 34px;
+    color: var(--text-color-darker);
+}
+
+/* 标题下面的那个小橘条 */
+.title1::after {
+    content: "";
+    display: block;
+    /* 宽度为title1，也就是标题的80% */
+    width: 80%;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin-top: 14px;
+    transform: translate(10%);
+}
+
+/* 小橘条下面的那句话 */
+.intro {
+    /* 上28px，下60px 这里用padding和margin看起来是没区别的*/
+    margin: 28px 0 60px 0;
+    font-size: 18px;
+    color: var(--text-color-dark-gray);
+}
+
+.features {
+    display: grid;
+    /* 分成3列，每列占1/3的空间 */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 126px 126px;
+    /* 列间距 */
+    column-gap: 5vw;
+}
+
+.feature {
+    display: grid;
+    grid-template-areas:
+        "icon title"
+        "icon content";
+    grid-template-columns: 60px 1fr;
+    grid-template-rows: 1fr 3fr;
+}
+
+.feature i.fas {
+    grid-area: icon;
+    font-size: 34px;
+    color: var(--primary-color);
+}
+
+.feature-title {
+    grid-area: title;
+    font-size: 18px;
+    color: var(--text-color-darker);
+}
+
+.feature-content {
+    grid-area: content;
+    color: var(--text-color-gray);
+    margin-top: 8px;
+}
