@@ -261,6 +261,7 @@ section {
     border: 0;
     border-radius: 4px;
     background-color: var(--secondary-color);
+    color: var(--text-color-dark-gray);
     padding: 8px 18px;
     cursor: pointer;
     transition: 0.4s;
@@ -272,7 +273,8 @@ section {
     outline: none;
 }
 
-.filter-btn:active,
+/* 这里一定需要是点 */
+.filter-btn.active,
 .filter-btn:hover {
     background-color: var(--primary-color);
     color: white;
@@ -292,4 +294,51 @@ section {
 .case-item img {
     object-fit: cover;
     height: 100%;
+}
+
+
+/* 漫画 */
+.comic-kinds {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 这一行不知道有啥用 */
+    grid-template-rows: 1fr 1fr;
+
+    column-gap: 38px;
+    row-gap: 34px;
+}
+
+.kind-item {
+    display: grid;
+    grid-template-areas:
+        "icon title"
+        "icon content";
+    /* item下的第一列宽度是70px */
+    grid-template-columns: 70px 1fr;
+    grid-template-rows: 1fr 3fr;
+
+    padding: 24px;
+    box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.1);
+}
+
+.kind-item i.fas {
+    grid-area: icon;
+    font-size: 42px;
+    color: var(--primary-color);
+
+    padding-top: 6px;
+}
+
+.kind-item .kind-title {
+    grid-area: title;
+    color: var(--text-color-darker);
+    font-size: 24px;
+}
+
+.kind-item .kind-content {
+    grid-area: content;
+    font-size: 16px;
+    color: var(--text-color-gray);
+    line-height: 30px;
+    padding-top: 8px;
 }

@@ -36,7 +36,8 @@ filterBtns.addEventListener("click", e => {
     let { target } = e
     const filterOption = target.getAttribute("data-filter");
     if (filterOption) {
-        document.querySelectorAll(".filter-btn.active")
+        document
+            .querySelectorAll(".filter-btn.active")
             .forEach(btn => btn.classList.remove("active"))
         target.classList.add("active")
         isotope.arrange({ filter: filterOption })
